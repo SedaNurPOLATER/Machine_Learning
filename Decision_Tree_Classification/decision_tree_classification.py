@@ -3,11 +3,11 @@ import numpy as np
 #%%  import data
 
 data = pd.read_csv("data.csv")
-data.drop(["id","Unnamed: 32"],axis=1,inplace = True)
+data.drop(["id","Unnamed: 32"],axis=1,inplace = True) # gereksiz sütunları siliyoruz
 
 # %%
-data.diagnosis = [ 1 if each == "M" else 0 for each in data.diagnosis]
-y = data.diagnosis.values
+data.diagnosis = [ 1 if each == "M" else 0 for each in data.diagnosis] # kötü huylu tümorler 1, iyi huylu tümorler 0 olarak adlandırıldı
+y = data.diagnosis.values # class labelları y değerine atadık ve values diyerek numpy a dönüştürdük
 x_data = data.drop(["diagnosis"],axis=1)
 #%% normalization
 
