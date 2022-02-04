@@ -1,9 +1,11 @@
+# Kütüphaneleri import ettik
 import pandas as pd
 import numpy as np
 from sklearn.linear_model import LinearRegression
-
+# csv dosyamızı çağırdık
 df = pd.read_csv("multiple_linear_regression_dataset.csv",sep = ";")
 
+# x'de tüm satırları, 0 ve 2. coulmları al diyoruz
 x = df.iloc[:,[0,2]].values
 y = df.maas.values.reshape(-1,1)
 
