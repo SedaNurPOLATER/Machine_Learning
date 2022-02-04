@@ -30,32 +30,3 @@ from sklearn.ensemble import RandomForestClassifier
 rf = RandomForestClassifier(n_estimators = 100,random_state = 1)
 rf.fit(x_train,y_train)
 print("random forest algo result: ",rf.score(x_test,y_test))
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
