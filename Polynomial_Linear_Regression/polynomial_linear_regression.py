@@ -1,11 +1,14 @@
+# Kütüphaneleri import ediyoruz
 import pandas as pd
 import matplotlib.pyplot as plt
-
+# data dosyamızı çağırdık
 df = pd.read_csv("polynomial regression.csv",sep = ";")
 
+# y değerine arabanın max hızını, x değerime araba fiyatımı atadım.
 y = df.araba_max_hiz.values.reshape(-1,1)
 x = df.araba_fiyat.values.reshape(-1,1)
 
+# y = max hız, x = fiyat diyerek grafik çizdiriyoruz
 plt.scatter(x,y)
 plt.ylabel("araba_max_hiz")
 plt.xlabel("araba_fiyat")
