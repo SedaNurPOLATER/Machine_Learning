@@ -1,9 +1,13 @@
+# Kütüphaneleri import ediyoruz
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
 
+# datamızı import ediyoruz, header = none diyerek başlığı almamasını istiyoruz
 df = pd.read_csv("random forest regression dataset.csv",sep = ";",header = None)
 
+# tüm satırlar ve 0. indexteki verileri x'e atandı, 1. indexdeki veriler y değişkenine atandı
+# values ile numpy a çeviriyoruz
 x = df.iloc[:,0].values.reshape(-1,1)
 y = df.iloc[:,1].values.reshape(-1,1)
 
@@ -17,7 +21,7 @@ print("7.8 seviyesinde fiyatın ne kadar olduğu: ",rf.predict(7.8))
 x_ = np.arange(min(x),max(x),0.01).reshape(-1,1)
 y_head = rf.predict(x_)
 
-# visualize
+# visualize - görselleştirelim
 plt.scatter(x,y,color="red")
 plt.plot(x_,y_head,color="green")
 plt.xlabel("tribun level")
